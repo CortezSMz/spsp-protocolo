@@ -1,11 +1,11 @@
 {
-  "name": "spsempapel-protocolo",
+  "name": "spsp-protocolo",
   "version": "0.1.0",
   "description": "",
   "main": "js/main.js",
   "author": "Corteez#3113",
   "license": "UNLICENSED",
-  "private": true,
+  "private": false,
   "scripts": {
     "start": "electron-forge start",
     "publish": "electron-forge publish",

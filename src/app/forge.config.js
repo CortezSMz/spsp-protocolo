@@ -21,7 +21,7 @@ module.exports = {
           authToken: process.env.GITHUB_TOKEN,
           repository: {
             owner: 'cortezsmz',
-            name: 'spsempapel-protocolo'
+            name: 'spsp-protocolo'
           },
           prerelease: true
         }
