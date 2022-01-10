@@ -1,0 +1,29 @@
+{
+  "name": "spsempapel-protocolo",
+  "version": "0.1.0",
+  "description": "",
+  "main": "js/main.js",
+  "author": "Corteez#3113",
+  "license": "UNLICENSED",
+  "private": true,
+  "scripts": {
+    "start": "electron-forge start",
+    "publish": "electron-forge publish",
+    "make": "electron-forge make --arch=x64 --targets @electron-forge/maker-squirrel"
+  },
+  "dependencies": {
+    "electron-squirrel-startup": "^1.0.0",
+    "puppeteer-core": "^13.0.1",
+    "puppeteer-in-electron": "^3.0.5"
+  },
+  "devDependencies": {
+    "@electron-forge/cli": "^6.0.0-beta.61",
+    "@electron-forge/maker-squirrel": "^6.0.0-beta.61",
+    "@electron-forge/publisher-github": "^6.0.0-beta.63",
+    "dotenv": "^10.0.0",
+    "electron": "^16.0.6"
+  },
+  "config": {
+    "forge": "./forge.config.js"
+  }
+}
