@@ -130,11 +130,11 @@ module.exports = [
         ])
     },
     {
-        title: 'Selecionando supervisor...',
-        do: (page, { supervisor }) => page.type('#formulario_responsavelSel_sigla', supervisor)
+        title: 'Selecionando funcionario...',
+        do: (page, { funcionario }) => page.type('#formulario_responsavelSel_sigla', funcionario)
     },
     {
-        title: 'Confirmando supervisor...',
+        title: 'Confirmando funcionario...',
         do: (page) => page.focus('#responsavelSelButton')
     },
     {

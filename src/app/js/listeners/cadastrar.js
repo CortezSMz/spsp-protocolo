@@ -1,7 +1,7 @@
 const { stepIterator, sleep } = require('./../util/Util')
 const { cadastrar } = require('../util/jobs')
 
-module.exports = async (mainWindow, mainPage, dummyPage, assunto, interessado, supervisor, arquivo) => {
+module.exports = async (mainWindow, mainPage, dummyPage, assunto, interessado, funcionario, arquivo) => {
     const ite = stepIterator(cadastrar)
     let processo = '';
 
@@ -18,7 +18,7 @@ module.exports = async (mainWindow, mainPage, dummyPage, assunto, interessado, s
             const res = await step.value.do(dummyPage, {
                 assunto,
                 interessado,
-                supervisor,
+                funcionario,
                 arquivo,
                 processo
             })

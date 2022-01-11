@@ -13,14 +13,17 @@ module.exports = async (mainWindow, mainPage, dummyPage, username, password) => 
         mainWindow.setProgressBar(progress)
 
         try {
-            const res = await step.value.do(dummyPage, { username, password })
+            const res = await step.value.do(dummyPage, {
+                username,
+                password
+            })
 
             if (step.value.title === "Verificando..." && res && typeof res === 'string') throw res
             else if (step.value.title === "Verificando..." && res && typeof res === 'boolean') {
                 process.env.PASS = password
                 mainWindow.flashFrame(true)
                 mainWindow.setProgressBar(-1)
-                mainWindow.loadFile(join(__dirname, './../../html/cadastrar.html'))
+                await mainWindow.loadFile(join(__dirname, './../../html/cadastrar.html'))
             }
         } catch (error) {
             console.log(error)
