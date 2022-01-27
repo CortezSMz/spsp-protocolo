@@ -12,7 +12,7 @@ module.exports = [
                     return Array.from(columns, column => column.innerText).slice(0, 2);
                 });
             });
-            
+
             return { funcionarios }
         }
     }

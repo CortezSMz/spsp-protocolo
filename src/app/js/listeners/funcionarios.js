@@ -21,25 +21,25 @@ const buscarFuncionarios = async (dummyPage) => {
         'NRM': [],
         'NVE': [],
         'PROT': [],
-    } 
+    }
 
-    const element = await dummyPage.waitForSelector('#dropdownLotaMenuButton > strong > span')
-    let unidade = await element.evaluate(el => el.textContent)
-    
-    unidade = /(\w{3})$/g.exec(unidade.trim())[0]
+    await dummyPage.waitForSelector('#inicio > div.col.col-12.col-sm-4.col-md-auto.ml-md-auto.mb-2 > a')
+    const element = await dummyPage.$eval('body > div:nth-child(2) > div.row.pt-2.pb-2.mb-3.submenusp > div.col.col-12.col-md-6.text-right > div.dropdown.d-inline', el => el.innerText)
+
+    const unidade = /(\w{3})$/g.exec(element.trim())[0]
 
     for (const setor of Object.keys(setores).values()) {
         const ite = stepIterator(funcionarios)
 
         while (ite.hasNext()) {
             const step = ite.next()
-    
+
             try {
                 const res = await step.value.do(dummyPage, {
                     unidade,
                     setor
                 })
-    
+
                 if (res && res.unidade) unidade = res.unidade
 
                 if (res && res.funcionarios) {
@@ -61,7 +61,7 @@ const buscarFuncionarios = async (dummyPage) => {
 
 const preencherFuncionarios = async (mainPage, setor, setores) => {
     const funcionarios = await mainPage.waitForSelector("#funcionario", { visible: true, timeout: 30000 });
-    
+
     await funcionarios.evaluate((el, setor, setores) => {
         el.innerHTML = '<option value="selecione">Selecione...</option>'
         if (!setores[setor]) return

@@ -22,7 +22,7 @@ const main = async () => {
         webPreferences: {
             preload: join(__dirname, '/preload.js'),
             contextIsolation: true
-        },        
+        },
     })
 
     await mainWindow.loadFile('./html/index.html')
@@ -53,8 +53,8 @@ const main = async () => {
     const dummyPage = await pie.getPage(browser, dummyWindow)
     let setores;
 
-    ipcMain.on('entrar', async(_, username, password) => {
-        popup(
+    ipcMain.on('entrar', async (_, username, password) => {
+        await popup(
             entrar(mainWindow, mainPage, dummyPage, username, password),
             mainWindow,
             dummyWindow

@@ -69,7 +69,7 @@ module.exports = [
                 page.waitForFileChooser(),
                 page.click('#arquivo')
             ])
-        
+
             await fileChooser.accept([ arquivo ])
         }
     },

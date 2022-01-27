@@ -31,6 +31,6 @@ module.exports = async (mainWindow, mainPage, dummyPage, username, password) => 
             mainWindow.setProgressBar(progress, { mode: 'error' })
             warn(mainPage, error)
             break
-        } 
+        }
     }
 }

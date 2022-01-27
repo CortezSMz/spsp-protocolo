@@ -31,14 +31,14 @@ class Util {
 
     static warn(page, message) {
         if (!message) return page.$eval('#aviso-div', e => e.setAttribute('hidden', 'true'))
-    
-        page.$eval('#aviso', (e, txt) => e.innerText = txt, message);    
+
+        page.$eval('#aviso', (e, txt) => e.innerText = txt, message);
         page.$eval('#aviso-div', e => e.removeAttribute('hidden'))
     }
 
     static #showHideChild(parent, child) {
         const position = parent.getPosition()
-    
+
         if (child.isVisible()) {
             parent.setPosition(position[0] + 241, position[1])
             return child.hide()

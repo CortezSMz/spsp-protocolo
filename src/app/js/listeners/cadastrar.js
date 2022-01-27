@@ -38,7 +38,7 @@ module.exports = async (mainWindow, mainPage, dummyPage, assunto, interessado, f
     mainWindow.setProgressBar(-1)
 
     mainPage.$eval('#loading', e => e.setAttribute('hidden', 'true'))
-    mainPage.$eval('#processo', (e, txt) => e.innerText = txt, processo);    
+    mainPage.$eval('#processo', (e, txt) => e.innerText = txt, processo);
     mainPage.$eval('#processo', e => e.removeAttribute('hidden'))
     mainPage.$eval('#processo-prep', e => e.removeAttribute('hidden'))
     mainPage.$eval('#protocolar', e => e.removeAttribute('hidden'))
