@@ -7,6 +7,7 @@ const { join } = require('path')
 
 const { entrar, cadastrar, protocolar, buscarFuncionarios, preencherFuncionarios } = require('./listeners')
 const { popup } = require('./util/Util')
+const { version } = require('./../package.json')
 
 const main = async () => {
     await pie.initialize(app)
@@ -14,6 +15,7 @@ const main = async () => {
     const browser = await pie.connect(app, puppeteer)
 
     const mainWindow = new BrowserWindow({
+        title: `Protocolo - SPSemPapel - v${version}`,
         icon: join(__dirname, '../img/sem-papel.ico'),
         autoHideMenuBar: true,
         resizable: false,
@@ -31,6 +33,7 @@ const main = async () => {
     })
 
     const dummyWindow = new BrowserWindow({
+        title: `Protocolo - SPSemPapel - v${version}`,
         icon: join(__dirname, '../img/sem-papel.ico'),
         resizable: false,
         movable: false,

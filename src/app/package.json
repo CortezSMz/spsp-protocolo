@@ -1,7 +1,7 @@
 {
   "name": "spsp-protocolo",
-  "version": "0.1.0",
-  "description": "",
+  "version": "0.1.2-alpha",
+  "description": "Protocolo SPSemPapel automatizado.",
   "main": "js/main.js",
   "author": "Corteez#3113",
   "license": "UNLICENSED",

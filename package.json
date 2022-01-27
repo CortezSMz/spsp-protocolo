@@ -1,8 +1,8 @@
 {
   "name": "spsp-protocolo",
-  "version": "0.1.0",
+  "version": "0.1.2-alpha",
   "author": "Cosmzs#3113",
-  "description": "SP Sem Papel automatizado.",
+  "description": "Protocolo SPSemPapel automatizado.",
   "license": "UNLICENSED",
   "private": "true"  
 }
